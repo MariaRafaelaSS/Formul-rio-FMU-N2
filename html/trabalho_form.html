@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Apoio e Denúncia Contra a Violência Feminina</title>
+    <link rel="stylesheet" href="C:\xampp\htdocs\violencia_feminina/css/estilo.css"> 
+</head>
+<body>
+    
+    <header>
+        <div class="header-container">
+            <div class="banner">
+                <img src="C:\xampp\htdocs\violencia_feminina\image/IMAGE_VIOLENCIA.src.png.png" alt="Banner" width="1100"> 
+            </div>
+            <div class="main-title">Formulário de Apoio e Denúncia Contra a Violência Feminina</div>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <form action="php/submit_form.php" method="POST">
+            <h2>1. Dados Pessoais da Vítima</h2>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="firstname" class="formbold-form-label">Nome</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Nome" class="formbold-form-input" required />
+                </div>
+                <div>
+                    <label for="lastname" class="formbold-form-label">Sobrenome</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Sobrenome" class="formbold-form-input" required />
+                </div>
+            </div>
+            
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="email" class="formbold-form-label">Email</label>
+                    <input type="email" name="email" id="email" placeholder="exemplo@email.com" class="formbold-form-input" required />
+                </div>
+                <div>
+                    <label class="formbold-form-label" for="age">Idade</label>
+                    <input type="number" id="age" name="age" class="formbold-form-input" placeholder="Sua idade" min="0" required />
+                </div>
+            </div>
+            
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="phone" class="formbold-form-label">Telefone para Contato</label>
+                    <input type="text" name="areacode" id="areacode" pattern="[0-9]{2}" placeholder="DDD" class="formbold-form-input" required />
+                    <input type="text" name="phone" id="phone" pattern="[0-9]{5}-[0-9]{4}" placeholder="99999-9999" class="formbold-form-input" required />
+                </div>
+            </div>
+            
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="data_nasc" class="formbold-form-label">Data de Nascimento</label>
+                    <input type="date" name="data_nasc" id="data_nasc" class="formbold-form-input" required />
+                </div>
+                <div>
+                    <label for="cpf" class="formbold-form-label">CPF</label>
+                    <input type="text" name="cpf" id="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" class="formbold-form-input" required />
+                </div>
+            </div>
+            
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="state" class="formbold-form-label">Estado</label>
+                    <select name="state" id="state" class="formbold-form-input" required>
+                        <option value="" disabled selected>Selecione o estado</option>
+                        <option value="AC">Acre (AC)</option>
+                        <option value="AL">Alagoas (AL)</option>
+                        <option value="AP">Amapá (AP)</option>
+                        <option value="AM">Amazonas (AM)</option>
+                        <option value="BA">Bahia (BA)</option>
+                        <option value="CE">Ceará (CE)</option>
+                        <option value="DF">Distrito Federal (DF)</option>
+                        <option value="ES">Espí rito Santo (ES)</option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MA">Maranhão (MA)</option>
+                        <option value="MT">Mato Grosso (MT)</option>
+                        <option value="MS">Mato Grosso do Sul (MS)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="PA">Pará (PA)</option>
+                        <option value="PB">Paraíba (PB)</option>
+                        <option value="PR">Paraná (PR)</option>
+                        <option value="PE">Pernambuco (PE)</option>
+                        <option value="PI">Piauí (PI)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="RN">Rio Grande do Norte (RN)</option>
+                        <option value="RS">Rio Grande do Sul (RS)</option>
+                        <option value="RO">Rondônia (RO)</option>
+                        <option value="RR">Roraima (RR)</option>
+                        <option value="SC">Santa Catarina (SC)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="SE">Sergipe (SE)</option>
+                        <option value="TO">Tocantins (TO)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="city" class="formbold-form-label">Cidade</label>
+                    <input type="text" name="city" id="city" placeholder="Nome da Cidade" class="formbold-form-input" required />
+                </div>
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="cep" class="formbold-form-label">CEP</label>
+                    <input type="text" name="cep" id="cep" placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" class="formbold-form-input" required />
+                </div>
+                <div>
+                    <label for="street" class="formbold-form-label">Nome da Rua</label>
+                    <input type="text" name="street" id="street" placeholder="Nome da Rua" class="formbold-form-input" required />
+                </div>
+            </div>
+
+            <div>
+                <h2>2. Dados Pessoais do Agressor</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="nome-agressor" class="formbold-form-label">Nome Completo:</label>
+                    <input type="text" id="nome-agressor" name="nome-agressor" class="formbold-form-input" placeholder="Nome completo do agressor" required />
+                </div>
+                <div>
+                    <label for="relacao-com-vitima" class="formbold-form-label">Relação com a Vítima:</label>
+                    <select id="relacao-com-vitima" name="relacao-com-vitima" class="formbold-form-input" required>
+                        <option value="" disabled selected>Selecione a relação</option>
+                        <option value="marido">Marido</option>
+                        <option value="namorado">Namorado</option>
+                        <option value="ex-parceiro">Ex-parceiro</option>
+                        <option value="familiar">Familiar</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="idade-agressor" class="formbold-form-label">Idade:</label>
+                    <input type="number" id="idade-agressor" name="idade-agressor" class="formbold-form-input" placeholder="Idade do agressor" min="0" required />
+                </div>
+                <div>
+                    <label for="profissao-agressor" class="formbold-form-label">Profissão:</label>
+                    <input type="text" id="profissao-agressor" name="profissao-agressor" class="formbold-form-input" placeholder="Profissão do agressor" required />
+                </div>
+            </div>
+            <div>
+                <label for="reside-no-mesmo-domicilio" class="formbold-form-label">Reside no Mesmo Domicílio?</label>
+                <div>
+                    <input type="radio" id="reside-sim" name="reside-no-mesmo-domicilio" value="sim" required>
+                    <label for="reside-sim">Sim</label>
+ </div>
+                <div>
+                    <input type="radio" id="reside-nao" name="reside-no-mesmo-domicilio" value="nao" required>
+                    <label for="reside-nao">Não</label>
+                </div>
+            </div>
+            <div>
+                <h2>3. Histórico da Violência</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="inicio" class="formbold-form-label">Quando começou a violência? (Data aproximada ou período)</label>
+                    <input type="text" id="inicio" name="inicio" class="formbold-form-input" placeholder="Ex.: Janeiro de 2020" required />
+                </div>
+                <div>
+                    <label for="frequencia" class="formbold-form-label">Qual é a frequência da violência?</label>
+                    <select id="frequencia" name="frequencia" class="formbold-form-input" required>
+                        <option value="" disabled selected>Selecione a frequência</option>
+                        <option value="diaria">Diária</option>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensal">Mensal</option>
+                        <option value="ocasional">Ocasional</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="tipos-violencia" class="formbold-form-label">Tipos de Violência:</label>
+                <div>
+                    <input type="checkbox" id="fisica" name="tipos-violencia" value="fisica">
+                    <label for="fisica">Física</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="psicologica" name="tipos-violencia" value="psicologica">
+                    <label for="psicologica">Psicológica</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="verbal" name="tipos-violencia" value="verbal">
+                    <label for="verbal">Verbal</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sexual" name="tipos-violencia" value="sexual">
+                    <label for="sexual">Sexual</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="economica" name="tipos-violencia" value="economica">
+                    <label for="economica">Econômica</label>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="outros-tipos-violencia" class="formbold-form-label">Outros Tipos de Violência (especifique):</label>
+                    <input type="text" id="outros-tipos-violencia" name="outros-tipos-violencia" class="formbold-form-input" placeholder="Especifique outros tipos de violência" />
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="medidas-aguardadas" class="formbold-form-label">Medidas Aguardadas ou Obtidas:</label>
+                    <input type="text" id="medidas-aguardadas" name="medidas-aguardadas" class="formbold-form-input" placeholder="Descreva as medidas" />
+                </div>
+            </div>
+            <div>
+                <label for="policia" class="formbold-form-label">A polícia foi acionada?</label>
+                <div>
+                    <input type="radio" id="policia-sim" name="policia" value="sim" required>
+                    <label for="policia-sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" id="policia-nao" name="policia" value="nao" required>
+                    <label for="policia-nao">Não</label>
+                </div>
+            </div>
+            <div>
+                <label for="notificacao" class="formbold-form-label">A vítima recebeu notificação ou proteção policial?</label>
+                <div>
+                    <input type="radio" id="notificacao-sim" name="notificacao" value="sim" required>
+                    <label for="notificacao-sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" id="notificacao-nao" name="notificacao" value="nao" required>
+                    <label for="notificacao-nao">Não</label>
+                </div>
+            </div>
+            <div>
+                <label for="apoio-psicologico" class="formbold-form-label">A vítima recebeu apoio psicológico?</label>
+                <div>
+                    <input type="radio" id="apoio-psicologico-sim" name="apoio-psicologico" value="sim" required>
+                    <label for="apoio-psicologico-sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" id="apoio-psicologico-nao" name="apoio-psicologico" value="nao" required>
+                    <label for="apoio-psicologico-nao">Não</label>
+                </div>
+            </div>
+            <div>
+                <label for="autoriza-compartilhamento" class="formbold-form-label">Autoriza o compartilhamento das informações com outras entidades de apoio?</label>
+                <div>
+                    <input type="radio" id="compartilhamento-sim" name="autoriza-compartilhamento" value="sim" required>
+                    <label for="compartilhamento-sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" id="compartilhamento-nao" name="autoriza-compartilhamento" value="nao" required>
+                    <label for="compartilhamento-nao">Não</label>
+                </div>
+            </div>
+            <div>
+                <h2>5. Outros Comentários</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="descricao-adicional" class="formbold-form-label">Espaço para descrição adicional dos fatos</label>
+                    <textarea id="descricao-adicional" name="descricao-adicional" class="formbold-form-input" rows="4" placeholder="Descreva os fatos adicionais"></textarea>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="informacoes-testemunhas" class="formbold-form-label">Informações sobre testemunhas (se houver)</label>
+                    <textarea id="informacoes-testemunhas" name="informacoes-testemunhas" class="formbold-form-input" rows="3" placeholder="Informe detalhes sobre as testemunhas"></textarea>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="preferencia-contato" class="formbold-form-label">Como você gostaria de ser contatada no futuro?</label>
+                    <input type="text" id="preferencia-contato" name="preferencia-contato" class="formbold-form-input" placeholder="Ex.: Email, telefone">
+                </div>
+            </div>
+            <div>
+                <h2>6. Autorização para Contato Futuro</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="contato-atualizacoes" class="formbold-form-label">Deseja ser contatada para atualizações sobre o caso?</label>
+                    <div>
+                        <input type="radio" id="contato-atualizacoes-sim" name="contato-atualizacoes" value="sim">
+                        <label for="contato-atualizacoes-sim">Sim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="contato-atualizacoes-nao" name="contato-atualizacoes" value="nao">
+                        <label for="contato-atualizacoes-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="formbold-input -flex">
+                <div>
+                    <label for="contato-suporte" class="formbold-form-label">Autoriza que a equipe de apoio entre em contato com você para suporte continuado?</label>
+                    <div>
+                        <input type="radio" id="contato-suporte-sim" name="contato-suporte" value="sim">
+                        <label for="contato-suporte-sim">Sim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="contato-suporte-nao" name="contato-suporte" value="nao">
+                        <label for="contato-suporte-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>7. Recursos e Informações Adicionais</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="recursos-disponiveis" class="formbold-form-label">Você recebeu ou foi informada sobre recursos disponíveis? (abrigos, advogados, linhas de apoio, etc.)</label>
+                    <div>
+                        <input type="radio" id="recursos-sim" name="recursos-disponiveis" value="sim">
+                        <label for="recursos-sim">Sim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="recursos-nao" name="recursos-disponiveis" value="nao">
+                        <label for="recursos-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="mais-informacoes" class="formbold-form-label">Gostaria de receber mais informações sobre seus direitos e opções de apoio?</label>
+                    <div>
+                        <input type="radio" id="mais-informacoes-sim" name="mais-informacoes" value="sim">
+                        <label for="mais-informacoes-sim">Sim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mais-informacoes-nao" name="mais-informacoes" value="nao">
+                        <label for="mais-informacoes-nao">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>8. Considerações Finais</h2>
+            </div>
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="outros-comentarios" class="formbold-form-label">Outros Comentários ou Informações Adicionais:</label>
+                    <textarea id="outros-comentarios" name="outros-comentarios" class="formbold-form-input" rows="4" placeholder="Comentários adicionais"></textarea>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="formbold-btn enviar-btn">Enviar</button>
+                <button type="button" class="formbold-btn limpar-btn" onclick="limparFormulario()">Limpar</button>
+            </div>
+        </form>
+    </div>
+ 
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            window.location.href = 'usuarios.html'; 
+        }
+    
+        function limparFormulario() {
+            document.querySelector("#supportForm").reset();
+        }
+    </script>
+</body>
+</html>
